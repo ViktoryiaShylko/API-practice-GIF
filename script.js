@@ -4,11 +4,9 @@ fetch("https://api.giphy.com/v1/gifs/trending?api_key=jeMvigjtlEAFHjrfJxcWres0IL
     console.log(data);
     let gifArr = [];
     data.data.forEach(element => {
-    gifArr.push(element.url);
+    gifArr.push(element.images.original.url);
     });
-    console.log(gifArr);
     let randomGif = gifArr[Math.floor(Math.random()*gifArr.length)];
-    console.log(randomGif);
 
     document.getElementById('result').innerHTML = 
      `<div><img src="${randomGif}"></div>` 
